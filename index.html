@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>新疆伊犁慢游计划 | 2026.05.22 - 2026.06.03</title>
+  <style>
+    :root {
+      --bg: #f4ecde;
+      --paper: rgba(255, 250, 242, 0.92);
+      --panel: rgba(28, 43, 38, 0.92);
+      --panel-soft: rgba(46, 65, 58, 0.86);
+      --ink: #20201b;
+      --muted: #6f665d;
+      --line: rgba(56, 41, 24, 0.14);
+      --gold: #c19338;
+      --grass: #48603a;
+      --lake: #2d708a;
+      --desert: #c86d35;
+      --accent: #a73e2b;
+      --white: #fffdf8;
+      --shadow: 0 24px 60px rgba(53, 37, 20, 0.14);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --max: 1260px;
+      --title: "Avenir Next", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      --body: "Noto Serif SC", "Songti SC", "STSong", Georgia, serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--body);
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top right, rgba(238, 205, 151, 0.36), transparent 28%),
+        radial-gradient(circle at bottom left, rgba(88, 120, 95, 0.18), transparent 34%),
+        linear-gradient(180deg, #efe2ca 0%, #f8f1e5 36%, #efe9dc 100%);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .shell {
+      width: min(var(--max), calc(100vw - 32px));
+      margin: 0 auto;
+      padding: 24px 0 60px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: 34px;
+      min-height: 560px;
+      padding: 44px;
+      color: var(--white);
+      background:
+        linear-gradient(135deg, rgba(21, 31, 29, 0.88), rgba(27, 45, 39, 0.54)),
+        url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80") center/cover;
+      box-shadow: var(--shadow);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -10% -16% auto;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(205, 163, 74, 0.38), transparent 68%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 28px;
+      grid-template-columns: 1.2fr 0.95fr;
+      align-items: end;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      padding: 9px 14px;
+      margin-bottom: 18px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(12px);
+      font-family: var(--title);
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-family: var(--title);
+      font-size: clamp(40px, 5vw, 72px);
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+      max-width: 9em;
+    }
+
+    .hero p {
+      max-width: 62ch;
+      margin: 20px 0 0;
+      font-size: 17px;
+      color: rgba(255, 248, 239, 0.9);
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .tag {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      font-size: 13px;
+    }
+
+    .hero-side {
+      padding: 22px;
+      border-radius: 24px;
+      background: rgba(255, 252, 246, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(14px);
+    }
+
+    .hero-side h2,
+    .section-title h2,
+    .spot-header h3,
+    .lodging h3,
+    .sources h3,
+    .note-panel h3,
+    .timeline h2 {
+      margin: 0;
+      font-family: var(--title);
+      letter-spacing: -0.03em;
+    }
+
+    .meta-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .meta-item {
+      display: grid;
+      gap: 4px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .meta-item:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .meta-item span {
+      font-size: 12px;
+      opacity: 0.72;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .meta-item strong {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .quick-warning {
+      margin-top: 20px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(167, 62, 43, 0.14);
+      color: #ffe6df;
+      font-size: 14px;
+    }
+
+    .sticky-nav {
+      position: sticky;
+      top: 14px;
+      z-index: 5;
+      display: flex;
+      gap: 10px;
+      overflow: auto;
+      margin: 24px 0 28px;
+      padding: 10px 0 6px;
+    }
+
+    .sticky-nav a {
+      white-space: nowrap;
+      padding: 11px 16px;
+      border-radius: 999px;
+      background: rgba(255, 252, 246, 0.72);
+      border: 1px solid rgba(56, 41, 24, 0.08);
+      font-size: 14px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 12px 24px rgba(56, 41, 24, 0.06);
+    }
+
+    section {
+      margin-top: 28px;
+    }
+
+    .section-card {
+      background: var(--paper);
+      border: 1px solid rgba(56, 41, 24, 0.08);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      padding: 30px;
+    }
+
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: end;
+      margin-bottom: 22px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(28px, 3vw, 42px);
+    }
+
+    .section-title p {
+      margin: 0;
+      max-width: 48ch;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .facts {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin-top: 16px;
+    }
+
+    .fact {
+      padding: 18px;
+      border-radius: 18px;
+      background: #fff8ee;
+      border: 1px solid var(--line);
+    }
+
+    .fact span {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-family: var(--title);
+    }
+
+    .fact strong {
+      font-size: 24px;
+      font-family: var(--title);
+      letter-spacing: -0.03em;
+    }
+
+    .route-layout {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1.18fr 0.82fr;
+      align-items: start;
+    }
+
+    .route-map {
+      position: relative;
+      padding: 22px;
+      border-radius: 24px;
+      background:
+        linear-gradient(180deg, rgba(20, 31, 29, 0.94), rgba(27, 43, 38, 0.98)),
+        linear-gradient(145deg, #1e302c, #10201d);
+      color: var(--white);
+      min-height: 620px;
+    }
+
+    .route-map svg {
+      width: 100%;
+      height: auto;
+    }
+
+    .map-shell {
+      position: relative;
+      overflow: hidden;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .map-frame {
+      display: block;
+      width: 100%;
+      height: 620px;
+      border: 0;
+      filter: saturate(0.92) contrast(1.02);
+    }
+
+    .map-overlay {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .map-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+      font-size: 13px;
+      color: rgba(255, 248, 239, 0.84);
+    }
+
+    .map-legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .map-legend i {
+      display: inline-block;
+      width: 16px;
+      height: 3px;
+      border-radius: 99px;
+      background: #f0bf63;
+    }
+
+    .map-legend i.flight {
+      background: #7ebbd1;
+    }
+
+    .route-notes {
+      display: grid;
+      gap: 16px;
+    }
+
+    .route-note {
+      padding: 18px;
+      border-radius: 18px;
+      background: #fff8ee;
+      border: 1px solid var(--line);
+    }
+
+    .route-note strong {
+      display: block;
+      margin-bottom: 8px;
+      font-family: var(--title);
+      font-size: 16px;
+    }
+
+    .route-note p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 18px;
+    }
+
+    .day-card {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: 110px 1fr;
+      padding: 18px;
+      border-radius: 22px;
+      background: #fff9f0;
+      border: 1px solid rgba(56, 41, 24, 0.08);
+    }
+
+    .day-index {
+      padding: 18px 14px;
+      border-radius: 18px;
+      background: linear-gradient(160deg, #29433d, #152824);
+      color: var(--white);
+    }
+
+    .day-index strong {
+      display: block;
+      font-family: var(--title);
+      font-size: 34px;
+      line-height: 1;
+    }
+
+    .day-index span {
+      display: block;
+      margin-top: 8px;
+      font-size: 13px;
+      opacity: 0.8;
+    }
+
+    .day-body h3 {
+      margin: 0;
+      font-family: var(--title);
+      font-size: 24px;
+      letter-spacing: -0.03em;
+    }
+
+    .day-body .line {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .chip {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(45, 112, 138, 0.08);
+      color: #215365;
+      font-size: 12px;
+      font-family: var(--title);
+    }
+
+    .day-body ul,
+    .spot-content ul,
+    .lodging ul,
+    .sources ul {
+      margin: 12px 0 0;
+      padding-left: 18px;
+    }
+
+    .day-body li,
+    .spot-content li,
+    .lodging li,
+    .sources li {
+      margin: 6px 0;
+    }
+
+    .day-foot {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 16px;
+    }
+
+    .day-foot div {
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: #fbf1e0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .day-foot strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--ink);
+      font-family: var(--title);
+    }
+
+    .day-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .day-media {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 18px;
+    }
+
+    .day-shot {
+      overflow: hidden;
+      border-radius: 18px;
+      border: 1px solid rgba(56, 41, 24, 0.08);
+      background: #fff3e2;
+    }
+
+    .day-shot img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      background: #ece1cf;
+    }
+
+    .day-shot figcaption {
+      padding: 10px 12px 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .guide-grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 18px;
+    }
+
+    .guide-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: #fff4e8;
+      border: 1px solid rgba(56, 41, 24, 0.08);
+    }
+
+    .guide-card h4 {
+      margin: 0 0 10px;
+      font-family: var(--title);
+      font-size: 18px;
+      letter-spacing: -0.02em;
+    }
+
+    .guide-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .spots {
+      display: grid;
+      gap: 24px;
+    }
+
+    .spot {
+      overflow: hidden;
+      border-radius: 26px;
+      background: #fffaf1;
+      border: 1px solid rgba(56, 41, 24, 0.08);
+      box-shadow: var(--shadow);
+    }
+
+    .spot-hero {
+      position: relative;
+      min-height: 260px;
+      padding: 28px;
+      display: flex;
+      align-items: end;
+      color: var(--white);
+      background-size: cover;
+      background-position: center;
+    }
+
+    .spot-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(9, 15, 16, 0.12), rgba(17, 29, 27, 0.86));
+    }
+
+    .spot-header {
+      position: relative;
+      z-index: 1;
+      max-width: 62ch;
+    }
+
+    .spot-header h3 {
+      font-size: clamp(32px, 4vw, 48px);
+      margin-bottom: 10px;
+    }
+
+    .spot-header p {
+      margin: 0;
+      font-size: 16px;
+      color: rgba(255, 248, 239, 0.9);
+    }
+
+    .spot-content {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1.1fr 0.9fr;
+      padding: 28px;
+    }
+
+    .spot-panel {
+      padding: 20px;
+      border-radius: 18px;
+      background: #fff4e8;
+      border: 1px solid rgba(56, 41, 24, 0.08);
+    }
+
+    .spot-panel h4 {
+      margin: 0 0 10px;
+      font-family: var(--title);
+      font-size: 18px;
+      letter-spacing: -0.02em;
+    }
+
+    .spot-panel p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .spot-grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 18px;
+    }
+
+    .spot-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .button,
+    button {
+      appearance: none;
+      border: 0;
+      cursor: pointer;
+      border-radius: 999px;
+      padding: 10px 16px;
+      font: inherit;
+      font-size: 14px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .button:hover,
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 28px rgba(53, 37, 20, 0.16);
+    }
+
+    .button.primary,
+    button.primary {
+      color: var(--white);
+      background: linear-gradient(135deg, #a36e24, #c19338);
+    }
+
+    .button.secondary,
+    button.secondary {
+      background: #f1e6d7;
+      color: var(--ink);
+      border: 1px solid rgba(56, 41, 24, 0.08);
+    }
+
+    .button.linkish {
+      background: rgba(45, 112, 138, 0.1);
+      color: #194d5d;
+    }
+
+    .lodging-grid {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .lodging {
+      padding: 20px;
+      border-radius: 20px;
+      background: #fff8ee;
+      border: 1px solid rgba(56, 41, 24, 0.08);
+    }
+
+    .lodging h3 {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    .lodging .sub {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .sources ul {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .sources a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .footer-note {
+      margin-top: 24px;
+      padding: 18px 20px;
+      border-radius: 20px;
+      background: rgba(167, 62, 43, 0.09);
+      border: 1px solid rgba(167, 62, 43, 0.18);
+      color: var(--accent);
+      font-size: 13px;
+    }
+
+    .footer-note strong {
+      font-family: var(--title);
+    }
+
+    .note-panel {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      background: rgba(13, 18, 17, 0.56);
+      z-index: 50;
+    }
+
+    .note-panel.open {
+      display: flex;
+    }
+
+    .note-dialog {
+      width: min(780px, calc(100vw - 28px));
+      max-height: calc(100vh - 32px);
+      overflow: auto;
+      border-radius: 28px;
+      background: #fffaf2;
+      box-shadow: 0 40px 90px rgba(13, 18, 17, 0.28);
+      padding: 28px;
+    }
+
+    .note-meta {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 10px 0 18px;
+    }
+
+    .note-fields {
+      display: grid;
+      gap: 14px;
+    }
+
+    .note-field {
+      display: grid;
+      gap: 8px;
+    }
+
+    .note-field label {
+      font-family: var(--title);
+      font-size: 14px;
+    }
+
+    .note-field textarea {
+      width: 100%;
+      min-height: 110px;
+      resize: vertical;
+      padding: 14px 16px;
+      border-radius: 16px;
+      border: 1px solid rgba(56, 41, 24, 0.14);
+      background: #fff;
+      font: inherit;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .note-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: space-between;
+      margin-top: 18px;
+    }
+
+    .note-actions .left,
+    .note-actions .right {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .saved-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-left: 8px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: rgba(72, 96, 58, 0.1);
+      color: var(--grass);
+      font-size: 12px;
+      font-family: var(--title);
+    }
+
+    @media (max-width: 1100px) {
+      .hero-grid,
+      .route-layout,
+      .spot-content {
+        grid-template-columns: 1fr;
+      }
+
+      .lodging-grid,
+      .facts {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .day-media,
+      .guide-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .shell {
+        width: min(var(--max), calc(100vw - 20px));
+        padding-top: 10px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 28px;
+      }
+
+      .section-card,
+      .spot-content {
+        padding: 18px;
+      }
+
+      .lodging-grid,
+      .facts,
+      .spot-grid,
+      .day-foot,
+      .day-media,
+      .guide-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .day-card {
+        grid-template-columns: 1fr;
+      }
+
+      .day-index {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .day-index span {
+        margin-top: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">Xinjiang Ili Loop · 13 Days</div>
+          <h1>新疆伊犁慢游计划</h1>
+          <p>
+            这一版改回“赛里木湖之后先去琼库什台”的顺序，用已经订到的白墨民宿 5/25-5/27 做核心锚点：赛湖露营吃晨昏光线，回伊宁缓一晚，再进琼库什台两晚，之后顺着恰西、那拉提、夏塔收口，最后飞到乌鲁木齐住一晚，再去吐鲁番做人文和沙漠。
+          </p>
+          <div class="hero-tags">
+            <div class="tag">5/23 赛湖露营</div>
+            <div class="tag">5/25-5/27 白墨已订</div>
+            <div class="tag">先琼库什台</div>
+            <div class="tag">恰西露营优先</div>
+            <div class="tag">那拉提 2 晚</div>
+            <div class="tag">6/3 晚飞广州</div>
+          </div>
+        </div>
+        <aside class="hero-side">
+          <h2>一眼看懂</h2>
+          <div class="meta-list">
+            <div class="meta-item"><span>入疆航班</span><strong>CZ126 10:05-15:25；CZ6854 18:55-20:15</strong></div>
+            <div class="meta-item"><span>关键调整</span><strong>赛湖后先琼库什台，再恰西、那拉提、夏塔</strong></div>
+            <div class="meta-item"><span>住宿锚点</span><strong>白墨民宿 5/25-5/27 已订；那拉提首推得闲民宿</strong></div>
+            <div class="meta-item"><span>返程城市</span><strong>6/3 乌鲁木齐 -> 广州</strong></div>
+          </div>
+          <div class="quick-warning">
+            重点提醒：赛里木湖优先车内露营；那拉提自驾票要抢；夏塔建议先按区间车方案准备；所有票务和路况出发前 3-7 天再复核一次。
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <nav class="sticky-nav" aria-label="页面导航">
+      <a href="#overview">总览</a>
+      <a href="#route">实际线路图</a>
+      <a href="#days">逐日行程</a>
+      <a href="#sources">来源</a>
+    </nav>
+
+    <section id="overview" class="section-card">
+      <div class="section-title">
+        <div>
+          <h2>总览</h2>
+          <p>新版核心不是压缩天数，而是围绕已经订到的琼库什台白墨民宿，把伊犁段顺序重排成更现实的房态版本。</p>
+        </div>
+      </div>
+      <div class="facts">
+        <div class="fact"><span>总天数</span><strong>13 天</strong></div>
+        <div class="fact"><span>主线顺序</span><strong>赛湖 -> 琼库 -> 恰西 -> 那拉提 -> 夏塔</strong></div>
+        <div class="fact"><span>露营优先</span><strong>赛湖 / 恰西</strong></div>
+        <div class="fact"><span>最需抢票</span><strong>那拉提自驾</strong></div>
+      </div>
+    </section>
+
+    <section id="route" class="section-card">
+      <div class="section-title">
+        <div>
+          <h2>实际线路图</h2>
+          <p>下面不再用虚拟折线，而是按经纬度近似投影新疆北部真实方位：西北是赛里木湖，中部是伊宁，东南是那拉提，西南是夏塔，吐鲁番段在最东侧。</p>
+        </div>
+      </div>
+      <div class="route-layout">
+        <div class="route-map" role="img" aria-label="按经纬度近似投影的新疆伊犁与吐鲁番线路图">
+          <svg viewBox="0 0 980 660" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="driveLine" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#f0bf63"/>
+                <stop offset="100%" stop-color="#e27a49"/>
+              </linearGradient>
+              <linearGradient id="flightLine" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#7ec8de"/>
+                <stop offset="100%" stop-color="#f0cf80"/>
+              </linearGradient>
+              <filter id="labelGlow" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0b1614" flood-opacity="0.7"/>
+              </filter>
+            </defs>
+            <rect x="0" y="0" width="980" height="660" rx="26" fill="#14251f"/>
+            <path d="M52 116 L928 116 M52 246 L928 246 M52 376 L928 376 M52 506 L928 506" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+            <path d="M100 56 L100 594 M300 56 L300 594 M500 56 L500 594 M700 56 L700 594 M900 56 L900 594" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+            <text x="70" y="84" fill="rgba(255,253,248,0.62)" font-size="13">北</text>
+            <path d="M82 92 L82 50 M72 62 L82 50 L92 62" fill="none" stroke="#fffdf8" stroke-width="2" stroke-linecap="round"/>
+            <text x="62" y="620" fill="rgba(255,253,248,0.58)" font-size="13">经纬度近似投影：用于判断方位和顺序，不替代导航。</text>
+
+            <path d="M132 108 C134 190 142 260 150 328 S160 454 168 542" fill="none" stroke="rgba(126,184,202,0.35)" stroke-width="16" stroke-linecap="round"/>
+            <text x="104" y="338" fill="rgba(255,253,248,0.34)" font-size="28" transform="rotate(88 104 338)">天山西段 / 伊犁河谷</text>
+            <path d="M760 120 C815 145 856 190 880 242 S905 338 920 430" fill="none" stroke="rgba(194,143,71,0.2)" stroke-width="34" stroke-linecap="round"/>
+            <text x="802" y="222" fill="rgba(255,253,248,0.35)" font-size="24" transform="rotate(62 802 222)">吐鲁番盆地</text>
+
+            <polyline points="81,281 64,103 81,281 242,381 216,333 377,286 40,470 81,281" fill="none" stroke="url(#driveLine)" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+            <path d="M81 281 C380 170 590 144 698 264" fill="none" stroke="url(#flightLine)" stroke-width="5" stroke-dasharray="13 11" stroke-linecap="round"/>
+            <polyline points="698,264 900,298 698,264" fill="none" stroke="url(#driveLine)" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+
+            <g filter="url(#labelGlow)" font-family="Avenir Next, PingFang SC, sans-serif" fill="#fffdf8">
+              <g><circle cx="81" cy="281" r="12" fill="#fffdf8"/><text x="102" y="276" font-size="21" font-weight="700">伊宁</text><text x="102" y="301" font-size="14" opacity="0.8">5/22、5/24、5/31</text></g>
+              <g><circle cx="64" cy="103" r="12" fill="#8ed8e8"/><text x="86" y="98" font-size="21" font-weight="700">赛里木湖</text><text x="86" y="123" font-size="14" opacity="0.8">西北，5/23 露营</text></g>
+              <g><circle cx="242" cy="381" r="12" fill="#cad997"/><text x="264" y="376" font-size="21" font-weight="700">琼库什台</text><text x="264" y="401" font-size="14" opacity="0.8">5/25-5/26 两晚</text></g>
+              <g><circle cx="216" cy="333" r="12" fill="#e0b484"/><text x="238" y="328" font-size="21" font-weight="700">恰西</text><text x="238" y="353" font-size="14" opacity="0.8">5/27 露营优先</text></g>
+              <g><circle cx="377" cy="286" r="12" fill="#d8c57a"/><text x="399" y="281" font-size="21" font-weight="700">那拉提</text><text x="399" y="306" font-size="14" opacity="0.8">5/28-5/29 两晚</text></g>
+              <g><circle cx="40" cy="470" r="12" fill="#f4c78a"/><text x="62" y="465" font-size="21" font-weight="700">夏塔 / 夏特村</text><text x="62" y="490" font-size="14" opacity="0.8">西南，5/30-5/31</text></g>
+              <g><circle cx="698" cy="264" r="12" fill="#7ec8de"/><text x="720" y="259" font-size="21" font-weight="700">乌鲁木齐</text><text x="720" y="284" font-size="14" opacity="0.8">6/1 飞抵转场</text></g>
+              <g><circle cx="900" cy="298" r="12" fill="#e57b4b"/><text x="716" y="330" font-size="21" font-weight="700">吐峪沟 / 库木塔格</text><text x="716" y="355" font-size="14" opacity="0.8">6/2-6/3</text></g>
+            </g>
+          </svg>
+          <div class="map-legend">
+            <span><i></i>自驾主线</span>
+            <span><i class="flight"></i>伊宁 -> 乌鲁木齐飞行转场</span>
+            <span>方位按经纬度近似，不是导航轨迹</span>
+          </div>
+        </div>
+        <div class="route-notes">
+          <div class="route-note"><strong>为什么改回先琼库什台</strong><p>白墨民宿 5/25-5/27 已经订到，5/28-5/30 无房，所以赛湖之后必须先把琼库什台吃掉，再继续往恰西、那拉提、夏塔走。</p></div>
+          <div class="route-note"><strong>代价</strong><p>5/24 不建议硬从赛湖直接冲琼库什台。更稳的做法是赛湖晨景后回伊宁休整一晚，5/25 再进山。</p></div>
+          <div class="route-note"><strong>那拉提玩法</strong><p>5/28 下午直接空中草原，开到毡房合作社停车场，步行约 5 分钟到网红桥；5/29 再玩河谷草原和盘龙古道。</p></div>
+          <div class="route-note"><strong>露营策略</strong><p>赛湖优先松树头停车场，其次点将台南停车场，再次西海草原停车场；恰西优先滑翔伞飞行基地或恰西采伐队附近停车场。</p></div>
+          <div class="route-note"><strong>伊昭公路判断</strong><p>那拉提 -> 夏塔的常规路线不走伊昭公路，但夏塔/昭苏 -> 伊宁可以走伊昭公路。所以在白墨已订的前提下，夏塔后置仍然有意义：5/31 玩完夏塔后，用伊昭公路作为回伊宁的景观收口。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="days" class="section-card">
+      <div class="section-title"><div><h2>逐日行程</h2><p>景点攻略、真实风景图、票务提醒和住宿判断都并入每天，每天打开就能直接执行。</p></div></div>
+      <div class="timeline">
+        <article class="day-card">
+          <div class="day-index"><strong>22</strong><span>5 月<br />周五</span></div>
+          <div class="day-body">
+            <h3>上海 -> 乌鲁木齐 -> 伊宁</h3><div class="line">住宿：伊宁 | 任务：落地休整，不提车</div>
+            <div class="chips"><span class="chip">CZ126</span><span class="chip">CZ6854</span><span class="chip">零驾驶</span><span class="chip">住机场 / 六星街片区</span><span class="chip">核租车材料</span></div>
+            <ul><li>上海 -> 乌鲁木齐：CZ126，10:05 起飞，15:25 落地。</li><li>乌鲁木齐天山机场 -> 伊宁机场：CZ6854，18:55 起飞，20:15 落地。</li><li>这天只做落地和休整，避免夜间提车；把租车订单、驾驶证、身份证、押金和第二天取车时间全部核好。</li></ul>
+            <div class="guide-grid"><div class="guide-card"><h4>住宿小卡片</h4><p>住伊宁。按备注选择机场或六星街/喀赞其片区，重点是晚到后入住顺、第二天取车方便、可寄存行李。</p></div><div class="guide-card"><h4>航班小卡片</h4><p>CZ126 10:05-15:25；CZ6854 18:55-20:15。中转间隔约 3.5 小时，适合在乌鲁木齐机场内完成晚餐和转机。</p></div></div>
+            <div class="day-foot"><div><strong>强度</strong>很轻松</div><div><strong>建议晚餐</strong>机场简餐 / 伊宁拌面</div><div><strong>备注</strong>尽量住可停车、可寄存行李酒店</div></div>
+          </div>
+        </article>
+
+        <article class="day-card" id="spot-sailimu">
+          <div class="day-index"><strong>23</strong><span>5 月<br />周六</span></div>
+          <div class="day-body">
+            <h3>伊宁提车 -> 赛里木湖露营</h3><div class="line">住宿：优先景区内车内露营 | 约 220km / 2.5-3h</div>
+            <div class="chips"><span class="chip">下午顺光</span><span class="chip">露营优先</span><span class="chip">松树头停车场首选</span></div>
+            <ul><li>中午后入湖，下午按松树头、点将台一线慢慢开，重点留给湖面、雪山和日落。</li><li>如果租到有露营模式的车，露营地点排序：松树头停车场 -> 点将台南停车场 -> 西海草原停车场。</li><li>如果没租到适合露营的车，再退到景区附近民宿或酒店，优先东门、南门附近，别住太远。</li></ul>
+            <div class="guide-grid"><div class="guide-card"><h4>票务与预约</h4><p>旺季常见口径是门票约 70 元/人，自驾服务费另计；不同平台会出现 24 小时、48 小时、套票或组合产品。建议出发前 3-5 天在“赛里木湖旅游”公众号和携程/同程同时查，自驾票要以官方当日产品为准。</p></div><div class="guide-card"><h4>避坑</h4><p>露营不是随便停草地，只考虑停车场或景区允许区域；晚上风大，车内保暖、充电、洗漱和厕所位置要提前确认。</p></div></div>
+            <div class="day-media"><figure class="day-shot"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sayram%20Lake%20scenery.jpg" alt="赛里木湖湖面与雪山实景" /><figcaption>赛里木湖实景：湖面、草坡和远处雪山。</figcaption></figure><figure class="day-shot"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/The%20shore%20of%20Sayram%20Lake.jpg" alt="赛里木湖湖岸实景" /><figcaption>赛里木湖岸线实景，适合判断露营和晨昏拍摄氛围。</figcaption></figure></div>
+            <div class="day-links"><button class="secondary" data-note-target="sailimu" data-note-title="赛里木湖个人备注">个人备注</button></div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <div class="day-index"><strong>24</strong><span>5 月<br />周日</span></div>
+          <div class="day-body">
+            <h3>赛里木湖晨景 -> 果子沟 -> 伊宁</h3><div class="line">住宿：伊宁 | 约 220km / 2.5-3h</div>
+            <div class="chips"><span class="chip">晨光拍湖</span><span class="chip">果子沟顺路</span><span class="chip">回城休整</span></div>
+            <ul><li>早晨再进湖或从露营点直接拍晨光，之后经果子沟回伊宁。</li><li>这天不硬赶琼库什台，给 5/25 上山留体力，也避免连续两天驾驶过长。</li></ul>
+            <div class="guide-grid"><div class="guide-card"><h4>攻略</h4><p>果子沟只作为顺路视角，不单独住宿，不把时间拆碎在多个停车点。</p></div><div class="guide-card"><h4>补给</h4><p>回伊宁后补水、干粮、车载充电、垃圾袋和露营保暖用品，后面琼库什台和恰西更需要这些。</p></div></div>
+            <div class="day-foot"><div><strong>强度</strong>轻中度</div><div><strong>重点</strong>回城休整</div><div><strong>住宿</strong>尽量住回 5/22 同商圈</div></div>
+          </div>
+        </article>
+
+        <article class="day-card" id="spot-qiongku">
+          <div class="day-index"><strong>25</strong><span>5 月<br />周一</span></div>
+          <div class="day-body">
+            <h3>伊宁 -> 琼库什台</h3><div class="line">住宿：白墨民宿（已订） | 约 4.5-5.5h，山路按天气浮动</div>
+            <div class="chips"><span class="chip">白墨第 1 晚</span><span class="chip">已订房</span><span class="chip">傍晚进村</span><span class="chip">后山视角</span></div>
+            <ul><li>这天正式使用白墨 5/25-5/27 的已订住宿，目标是傍晚前进村。</li><li>进村后不再安排硬项目，只看村落、后山、木屋和光线。</li></ul>
+            <div class="guide-grid"><div class="guide-card"><h4>票务与预约</h4><p>琼库什台村通常按免费开放处理，重点不是门票，而是进村路况、停车位置和民宿入住确认。出发前一天让白墨民宿确认道路、天气、停车、是否需要提前报车牌。</p></div><div class="guide-card"><h4>住宿小卡片</h4><p>白墨民宿 5/25-5/27 已确定订到。这是本版行程的硬锚点，不再作为“优先/备选”处理；当天重点是准时入住，不临时绕远。</p></div></div>
+            <div class="day-media"><figure class="day-shot"><img src="https://cdn.sanity.io/images/8bc71v3u/production/1c9e5fab00d87ed9e211d53e63648a714dd9afeb-1215x800.jpg?rect=59,182,1099,618&w=1920&h=1080&fm=webp&q=75" alt="琼库什台村与草原实景" /><figcaption>琼库什台村与草原实景，用来判断木屋、草坡和慢住氛围。</figcaption></figure></div>
+            <div class="day-links"><button class="secondary" data-note-target="qiongku" data-note-title="琼库什台个人备注">个人备注</button></div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <div class="day-index"><strong>26</strong><span>5 月<br />周二</span></div>
+          <div class="day-body">
+            <h3>琼库什台深度慢游</h3><div class="line">住宿：继续白墨民宿 | 不换酒店</div>
+            <div class="chips"><span class="chip">白墨第 2 晚</span><span class="chip">后山发呆</span><span class="chip">乌孙古道轻体验</span></div>
+            <ul><li>主打村落、后山、荡秋千、清晨和傍晚光线。</li><li>乌孙古道只走北入口体验段，控制在 1.5-2.5 小时，不做穿越。</li></ul>
+            <div class="guide-grid"><div class="guide-card"><h4>住宿小卡片</h4><p>继续住白墨民宿，不换酒店。当天价值是晨昏、后山和村落氛围，别为了外部景点牺牲这晚。</p></div><div class="guide-card"><h4>票务与预约</h4><p>无核心门票压力。当天只需要确认民宿晚餐、停车、热水、天气和次日去恰西的出村路况。</p></div></div>
+            <div class="day-foot"><div><strong>强度</strong>低</div><div><strong>重点</strong>晨昏光线</div><div><strong>提醒</strong>风大时无人机不要勉强飞</div></div>
+          </div>
+        </article>
+
+        <article class="day-card" id="spot-qiaxi">
+          <div class="day-index"><strong>27</strong><span>5 月<br />周三</span></div>
+          <div class="day-body">
+            <h3>琼库什台 -> 恰西露营</h3><div class="line">住宿：优先露营 | 约 3.5-5h，视山路与天气</div>
+            <div class="chips"><span class="chip">滑翔伞基地优先</span><span class="chip">采伐队停车场备选</span><span class="chip">不去瀑布</span></div>
+            <ul><li>恰西玩法固定：燕子桥 -> 恰西画卷 -> 网红两棵树 -> 网红桥 -> 返回。</li><li>住宿优先露营：滑翔伞飞行基地或恰西采伐队附近停车场；天气差或停车条件不稳，再退到附近民宿或酒店。</li><li>明确不去恰西瀑布，也不继续钻后段复杂土路。</li></ul>
+            <div class="guide-grid"><div class="guide-card"><h4>票务与预约</h4><p>公开资料常见门票约 30 元/人，部分一日游产品另含区间或直通车。自驾入内、露营点、临时管制和售票方式波动较大，建议出发前 1-3 天让当地民宿或景区电话复核。</p></div><div class="guide-card"><h4>住宿小卡片</h4><p>优先露营：滑翔伞飞行基地或恰西采伐队附近停车场。先看风力、降雨、厕所、水源、是否允许过夜；如果不能确认，就改附近民宿或酒店。</p></div></div>
+            <div class="day-media"><figure class="day-shot"><img src="https://www.xinjiangtravel.org/upload/default/20240921/124dfa6f59816f390d94c019b2db28a5.jpg" alt="恰西森林公园草原和雪山实景" /><figcaption>恰西森林公园实景：草原、云杉和雪山。</figcaption></figure><figure class="day-shot"><img src="https://www.xinjiangtravel.org/upload/default/20240921/25eb5cc171f7a61dd41afe65a987ea36.jpg" alt="恰西草原实景" /><figcaption>恰西草原实景，露营前重点看天气和风力。</figcaption></figure></div>
+            <div class="day-links"><button class="secondary" data-note-target="qiaxi" data-note-title="恰西个人备注">个人备注</button></div>
+          </div>
+        </article>
+
+        <article class="day-card" id="spot-nalati">
+          <div class="day-index"><strong>28</strong><span>5 月<br />周四</span></div>
+          <div class="day-body">
+            <h3>恰西 -> 那拉提空中草原</h3><div class="line">住宿：那拉提附近民宿，第 1 晚 | 首推得闲民宿</div>
+            <div class="chips"><span class="chip">空中草原</span><span class="chip">毡房合作社停车场</span><span class="chip">网红桥</span></div>
+            <ul><li>到那拉提后第一天不再“预热”，直接去空中草原。</li><li>自驾开到毡房合作社停车场，再步行约 5 分钟到网红桥，看草原花海和开阔坡面。</li><li>住宿首推得闲民宿；备选疆牧野云宿，优势是离雅欣早餐店近。</li></ul>
+            <div class="guide-grid"><div class="guide-card"><h4>票务与预约</h4><p>那拉提自驾定制游 200 元/人，48 小时内随意进出。购票渠道为“智游那拉提”小程序，需准备身份证、驾驶证和行驶证；提前 7 天或游玩当日 7:00 开放购票，5/21 开始盯 5/28 的票。</p></div><div class="guide-card"><h4>住宿小卡片</h4><p>那拉提附近民宿连住两晚。首推得闲民宿：全屋智能、床上细节选品好；备选疆牧野云宿：离雅欣早餐店近。</p></div></div>
+            <div class="day-media"><figure class="day-shot"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Nalati%20Grassland%201.jpg" alt="那拉提草原实景" /><figcaption>那拉提草原实景，适合空中草原第一天。</figcaption></figure><figure class="day-shot"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/%E9%B8%9F%E8%A7%88%E9%82%A3%E6%8B%89%E6%8F%90%E7%A9%BA%E4%B8%AD%E8%8D%89%E5%8E%9F%20-%20panoramio.jpg" alt="那拉提空中草原俯瞰实景" /><figcaption>那拉提空中草原俯瞰实景。</figcaption></figure></div>
+            <div class="day-links"><button class="secondary" data-note-target="nalati" data-note-title="那拉提个人备注">个人备注</button></div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <div class="day-index"><strong>29</strong><span>5 月<br />周五</span></div>
+          <div class="day-body">
+            <h3>那拉提河谷草原 + 盘龙古道</h3><div class="line">住宿：继续那拉提附近民宿，第 2 晚</div>
+            <div class="chips"><span class="chip">河谷草原</span><span class="chip">盘龙古道</span><span class="chip">用满 48h 自驾票</span></div>
+            <ul><li>第二天把河谷草原和盘龙古道放满，不再重复第一天的空中草原。</li><li>这天可以根据天气调整顺序：云层低就先河谷，天气打开再上高点。</li></ul>
+            <div class="guide-grid"><div class="guide-card"><h4>住宿小卡片</h4><p>继续住那拉提附近民宿，不换酒店。首推得闲民宿，其次疆牧野云宿；这晚要服务第二天转场，所以停车和早出发便利性很重要。</p></div><div class="guide-card"><h4>票务与预约</h4><p>继续使用 48 小时自驾票。入园时随身带身份证、驾驶证、行驶证；购票人与入园人信息要一致，避免实名核验卡住。</p></div></div>
+            <div class="day-foot"><div><strong>强度</strong>中等偏上</div><div><strong>重点</strong>河谷层次 + 盘山路</div><div><strong>提醒</strong>晚上早点休息，次日去夏特村</div></div>
+          </div>
+        </article>
+
+        <article class="day-card" id="spot-xiata">
+          <div class="day-index"><strong>30</strong><span>5 月<br />周六</span></div>
+          <div class="day-body">
+            <h3>那拉提 -> 夏特村 / 昭苏栖畔民宿</h3><div class="line">住宿：首推昭苏栖畔民宿，其次枕山月 | 约 4-5.5h</div>
+            <div class="chips"><span class="chip">夏塔前夜</span><span class="chip">不住远</span><span class="chip">核伊昭路况</span></div>
+            <ul><li>这天以转场为主，不再塞额外景点。</li><li>住宿首推昭苏栖畔民宿，其次枕山月；核心标准是离夏塔近、停车方便、第二天能早走。</li></ul>
+            <div class="guide-grid"><div class="guide-card"><h4>路线判断</h4><p>那拉提 -> 夏塔的常规导航不经过伊昭公路。伊昭公路的使用点放到第二天：夏塔/昭苏 -> 伊宁返程。</p></div><div class="guide-card"><h4>住宿小卡片</h4><p>夏塔前夜首推昭苏栖畔民宿，其次枕山月。核心标准是离夏塔近、停车方便、第二天能早走。</p></div><div class="guide-card"><h4>票务与预约</h4><p>夏塔基础组合常见为门票+首段区间车约 80 元/人。优先在“智游昭苏”小程序提前查票；自驾票有现场、限量和动态政策，不建议作为唯一方案。</p></div><div class="guide-card"><h4>如果要前置夏塔</h4><p>最顺会是伊宁 -> 伊昭公路 -> 昭苏/夏塔 -> 琼库什台 -> 恰西 -> 那拉提，但会冲击 5/25 入住白墨民宿。白墨已订时，不建议这样改。</p></div></div>
+            <div class="day-media"><figure class="day-shot"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/%E6%96%B0%E7%96%86-%E6%98%AD%E8%8B%8F-%E5%A4%8F%E5%A1%94%E5%B3%A1%E8%B0%B7%20-%20panoramio.jpg" alt="夏塔峡谷实景" /><figcaption>夏塔峡谷实景，前夜住近是为了第二天早进。</figcaption></figure><figure class="day-shot"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/%E5%A4%8F%E7%89%B9%E6%B8%A9%E6%B3%89%E7%89%A7%E5%9C%BA%20-%20panoramio.jpg" alt="夏特温泉牧场实景" /><figcaption>夏特温泉牧场实景，雪山和牧场是夏塔段核心气质。</figcaption></figure></div>
+            <div class="day-links"><button class="secondary" data-note-target="xiata" data-note-title="夏塔个人备注">个人备注</button></div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <div class="day-index"><strong>31</strong><span>5 月<br />周日</span></div>
+          <div class="day-body">
+            <h3>夏塔 -> 伊宁还车</h3><div class="line">住宿：伊宁 | 景区内 + 回程合计约 4-5h</div>
+            <div class="chips"><span class="chip">转运桥</span><span class="chip">将军桥前</span><span class="chip">回伊宁还车</span><span class="chip">伊犁段收口</span></div>
+            <ul><li>主推荐路线：游客中心 / 温泉酒店 -> 转运桥 -> 将军桥。</li><li>鲜花台不是默认主线，只有天气、体力、交通都顺时才追加。</li><li>当晚回伊宁并还车，6/1 直接从伊宁飞乌鲁木齐；如果伊昭公路确认开放，优先走昭苏 -> 伊昭公路 -> 伊宁，把它作为伊犁段最后的景观公路。</li></ul>
+            <div class="guide-grid"><div class="guide-card"><h4>住宿小卡片</h4><p>回伊宁住机场或还车方便片区，尽量选可晚到入住、去机场顺、第二天不用再处理车辆的酒店。</p></div><div class="guide-card"><h4>票务与预约</h4><p>当天继续按夏塔票务执行。若临近确认有稳定自驾票，再评估是否升级；否则按区间车方案走，避免因为抢不到自驾票影响主线。</p></div><div class="guide-card"><h4>伊昭公路小卡片</h4><p>如果 5/31 已开放并且天气允许，夏塔回伊宁优先走伊昭公路；如果未开放或临时管制，就按普通路线回伊宁，不为它冒险绕路。</p></div></div>
+            <div class="day-foot"><div><strong>强度</strong>中等</div><div><strong>重点</strong>雪山 / 冰川感</div><div><strong>提醒</strong>住机场方便片区</div></div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <div class="day-index"><strong>1</strong><span>6 月<br />周一</span></div>
+          <div class="day-body">
+            <h3>伊宁 -> 乌鲁木齐市区</h3><div class="line">住宿：乌鲁木齐 | 航班按 CZ6853 10:30-11:50 参考</div>
+            <div class="chips"><span class="chip">伊宁出发</span><span class="chip">乌鲁木齐半日</span><span class="chip">住乌鲁木齐</span></div>
+            <ul><li>5/31 已在伊宁还车，所以这天直接从伊宁机场飞乌鲁木齐。</li><li>中午前后到乌鲁木齐，下午安排乌鲁木齐市区轻量游玩，晚上住乌鲁木齐。</li><li>这天不再赶去吐鲁番，给后面沙漠和吐峪沟留更稳定的节奏。</li></ul>
+            <div class="guide-grid"><div class="guide-card"><h4>住宿小卡片</h4><p>住乌鲁木齐。按备注选择市区或第二天出城方便的位置，核心是停车/取车方便、第二天去鄯善和库木塔格顺路。</p></div><div class="guide-card"><h4>票务与预约</h4><p>当天没有核心景区票务压力。重点确认伊宁飞乌鲁木齐航班、乌鲁木齐取车/用车安排，以及第二天去沙漠的导航时间。</p></div></div>
+          </div>
+        </article>
+
+        <article class="day-card" id="spot-kumtag">
+          <div class="day-index"><strong>2</strong><span>6 月<br />周二</span></div>
+          <div class="day-body">
+            <h3>乌鲁木齐 -> 库木塔格沙漠 -> 吐峪沟</h3><div class="line">住宿：吐峪沟附近 | 乌鲁木齐出发，沙漠后转吐峪沟</div>
+            <div class="chips"><span class="chip">沙漠主力日</span><span class="chip">日落时段</span><span class="chip">住吐峪沟</span></div>
+            <ul><li>上午从乌鲁木齐出发，直接去库木塔格沙漠，把白天后段和日落留给沙丘。</li><li>沙漠结束后不回乌鲁木齐，转到吐峪沟附近住宿，第二天上午再慢慢看麻扎村和吐峪沟。</li></ul>
+            <div class="guide-grid"><div class="guide-card"><h4>票务与预约</h4><p>库木塔格成人门票常见约 30 元/人，沙漠项目另付费。建议游玩前 1-2 天查风沙、开放时间和项目运营。</p></div><div class="guide-card"><h4>住宿小卡片</h4><p>晚上住吐峪沟附近。继续按备注里的院落、停车、安静和清晨拍摄空间筛，丁谷民宿、山兰民宿仍可作为起点。</p></div></div>
+            <div class="day-media"><figure class="day-shot"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/%E4%B8%AD%E5%9B%BD%E6%96%B0%E7%96%86%E5%90%90%E9%B2%81%E7%95%AA%E5%9C%B0%E5%8C%BA%E9%84%AF%E5%96%84%E5%8E%BF%20China%20Xinjiang%20Turpan%20area%20of%20Shanshan%20Cou%20-%20panoramio%20%281%29.jpg" alt="鄯善库木塔格沙漠实景" /><figcaption>鄯善库木塔格沙漠实景。</figcaption></figure><figure class="day-shot"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Kumtagh%20Desert.jpg" alt="库木塔格沙漠实景" /><figcaption>库木塔格沙漠实景，日落前后更适合拍摄。</figcaption></figure></div>
+            <div class="day-links"><button class="secondary" data-note-target="kumtag" data-note-title="库木塔格个人备注">个人备注</button></div>
+          </div>
+        </article>
+
+        <article class="day-card" id="spot-tuyugou">
+          <div class="day-index"><strong>3</strong><span>6 月<br />周三</span></div>
+          <div class="day-body">
+            <h3>吐峪沟 / 麻扎村 -> 乌鲁木齐 -> 广州</h3><div class="line">住宿：无 | 上午吐峪沟，之后回乌鲁木齐</div>
+            <div class="chips"><span class="chip">麻扎村晨间</span><span class="chip">回乌鲁木齐</span><span class="chip">晚班机更稳</span></div>
+            <ul><li>上午留给麻扎村和吐峪沟，再补一轮村落、人文和清晨光线。</li><li>中午前后开始回乌鲁木齐，返程航班仍建议订傍晚或晚上，给陆路转场留缓冲。</li><li>如果返程航班变早，就要减少上午吐峪沟停留，优先保证回乌鲁木齐时间。</li></ul>
+            <div class="guide-grid"><div class="guide-card"><h4>住宿小卡片</h4><p>当天不住宿。6/2 晚住吐峪沟附近，6/3 上午游玩后回乌鲁木齐；如果返程航班早于 18:00，需要压缩吐峪沟上午行程。</p></div><div class="guide-card"><h4>票务与预约</h4><p>吐峪沟和麻扎村以现场规则和村落管理为准。当天重点是礼仪、停车、开放区域、拍摄尺度和回乌鲁木齐的最晚出发时间。</p></div></div>
+            <div class="day-foot"><div><strong>强度</strong>中等</div><div><strong>重点</strong>离场节奏</div><div><strong>提醒</strong>别把尾日排满</div></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="sources" class="section-card sources">
+      <div class="section-title"><div><h2>来源</h2><p>只保留会影响路线真实性的来源；景点卡片只保留个人备注入口。</p></div></div>
+      <h3>关键依据</h3>
+      <ul>
+        <li>那拉提自驾实名与 200 元/人政策：昌吉市人民政府转载公告、新疆日报/景区公告口径。</li>
+        <li>那拉提价格公示与自驾定制游：新疆日报相关报道、智游那拉提口径。</li>
+        <li>夏塔门票、区间车、自驾票参考：新疆马文化智慧旅游平台、智游昭苏相关公开信息。</li>
+        <li>伊昭公路判断：伊昭公路连接伊宁/察布查尔与昭苏，2026 年官方公开口径为预计 5 月底恢复季节性通车；那拉提到夏塔不把它作为必经路，但夏塔/昭苏返回伊宁可以把它作为景观公路收口。</li>
+        <li>恰西门票与开放参考：公开景区资料和近期平台信息，临出发需电话复核。</li>
+        <li>图片来源：Wikimedia Commons、China Educational Tours、XinjiangTravel 页面展示图，均用于对应景点的实际风景参考。</li>
+      </ul>
+      <p style="margin-top: 16px; color: var(--muted); font-size: 14px;">注意：酒店房态、票价、限流和道路开放都可能随日期变化。最终下单前，以 2026 年 5 月下旬各景区官方小程序、公众号和酒店实际回复为准。</p>
+    </section>
+  </div>
+
+  <div class="note-panel" id="notePanel" aria-hidden="true">
+    <div class="note-dialog">
+      <h3 id="noteTitle">个人备注</h3>
+      <div class="note-meta">备注只保存在当前浏览器本机，不会上传。适合记录你自己的避坑、房号、电话、临时增删项目和拍摄提醒。</div>
+      <div class="note-fields">
+        <div class="note-field">
+          <label for="note-attention">我自己要注意的事项</label>
+          <textarea id="note-attention" placeholder="例如：这里风特别大，日落前半小时把无人机先飞完。"></textarea>
+        </div>
+        <div class="note-field">
+          <label for="note-hotel">已确认的酒店 / 联系方式</label>
+          <textarea id="note-hotel" placeholder="例如：白墨民宿，老板电话，停车位置，入住时间。"></textarea>
+        </div>
+        <div class="note-field">
+          <label for="note-plan">临时增减项目</label>
+          <textarea id="note-plan" placeholder="例如：如果天气差，就把某个观景点删掉。"></textarea>
+        </div>
+        <div class="note-field">
+          <label for="note-photo">拍照 / 无人机提醒</label>
+          <textarea id="note-photo" placeholder="例如：赛里木湖早上按点将台 -> 松树头，不要反着走。"></textarea>
+        </div>
+      </div>
+      <div class="note-actions">
+        <div class="left">
+          <button class="primary" id="saveNoteButton">保存备注</button>
+          <button class="secondary" id="clearNoteButton">清空备注</button>
+        </div>
+        <div class="right">
+          <button class="secondary" id="closeNoteButton">关闭</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const notePanel = document.getElementById("notePanel");
+    const noteTitle = document.getElementById("noteTitle");
+    const fields = {
+      attention: document.getElementById("note-attention"),
+      hotel: document.getElementById("note-hotel"),
+      plan: document.getElementById("note-plan"),
+      photo: document.getElementById("note-photo")
+    };
+    const saveButton = document.getElementById("saveNoteButton");
+    const clearButton = document.getElementById("clearNoteButton");
+    const closeButton = document.getElementById("closeNoteButton");
+    let currentNoteKey = null;
+
+    function storageKey(id) {
+      return "xinjiang-trip-note-" + id;
+    }
+
+    function updateSavedIndicators() {
+      document.querySelectorAll("[data-note-target]").forEach((button) => {
+        const key = storageKey(button.dataset.noteTarget);
+        const hasData = Boolean(localStorage.getItem(key));
+        let badge = button.parentElement.querySelector(".saved-badge[data-for='" + button.dataset.noteTarget + "']");
+
+        if (hasData && !badge) {
+          badge = document.createElement("span");
+          badge.className = "saved-badge";
+          badge.dataset.for = button.dataset.noteTarget;
+          badge.textContent = "已保存备注";
+          button.insertAdjacentElement("afterend", badge);
+        }
+
+        if (!hasData && badge) {
+          badge.remove();
+        }
+      });
+    }
+
+    function openNote(targetId, title) {
+      currentNoteKey = storageKey(targetId);
+      noteTitle.textContent = title;
+
+      const saved = JSON.parse(localStorage.getItem(currentNoteKey) || "{}");
+      Object.keys(fields).forEach((name) => {
+        fields[name].value = saved[name] || "";
+      });
+
+      notePanel.classList.add("open");
+      notePanel.setAttribute("aria-hidden", "false");
+      fields.attention.focus();
+    }
+
+    function closeNote() {
+      notePanel.classList.remove("open");
+      notePanel.setAttribute("aria-hidden", "true");
+      currentNoteKey = null;
+    }
+
+    document.querySelectorAll("[data-note-target]").forEach((button) => {
+      button.addEventListener("click", () => {
+        openNote(button.dataset.noteTarget, button.dataset.noteTitle);
+      });
+    });
+
+    saveButton.addEventListener("click", () => {
+      if (!currentNoteKey) return;
+      const data = {};
+      Object.keys(fields).forEach((name) => {
+        data[name] = fields[name].value.trim();
+      });
+      localStorage.setItem(currentNoteKey, JSON.stringify(data));
+      updateSavedIndicators();
+      closeNote();
+    });
+
+    clearButton.addEventListener("click", () => {
+      if (!currentNoteKey) return;
+      localStorage.removeItem(currentNoteKey);
+      Object.values(fields).forEach((field) => {
+        field.value = "";
+      });
+      updateSavedIndicators();
+    });
+
+    closeButton.addEventListener("click", closeNote);
+
+    notePanel.addEventListener("click", (event) => {
+      if (event.target === notePanel) {
+        closeNote();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && notePanel.classList.contains("open")) {
+        closeNote();
+      }
+    });
+
+    updateSavedIndicators();
+  </script>
+</body>
+</html>
