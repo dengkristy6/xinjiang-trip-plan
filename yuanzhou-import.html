@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>圆周旅迹导入版 | 新疆伊犁慢游计划 2026.05.22-2026.06.03</title>
+  <meta name="description" content="新疆伊犁慢游计划导入版，供圆周旅迹等行程 APP 识别日期、地点和路线。" />
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f4ee;
+      --paper: #ffffff;
+      --ink: #202124;
+      --muted: #626a73;
+      --line: #dde2e7;
+      --accent: #246b5a;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.68;
+    }
+
+    main {
+      width: min(960px, calc(100vw - 32px));
+      margin: 0 auto;
+      padding: 32px 0 56px;
+    }
+
+    header,
+    section {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 22px;
+      margin-bottom: 16px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      line-height: 1.25;
+    }
+
+    h1 {
+      font-size: 28px;
+    }
+
+    h2 {
+      font-size: 21px;
+      margin-bottom: 12px;
+    }
+
+    h3 {
+      font-size: 17px;
+      color: var(--accent);
+    }
+
+    p {
+      margin: 8px 0;
+    }
+
+    ul {
+      margin: 8px 0 0;
+      padding-left: 20px;
+    }
+
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .meta div,
+    .day {
+      border-top: 1px solid var(--line);
+      padding-top: 12px;
+    }
+
+    .meta span,
+    .label {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .day {
+      margin-top: 14px;
+    }
+
+    .day:first-of-type {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .route {
+      font-weight: 700;
+    }
+
+    .places {
+      color: var(--muted);
+    }
+
+    pre {
+      white-space: pre-wrap;
+      word-break: break-word;
+      margin: 0;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcfd;
+      font: 14px/1.7 ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TouristTrip",
+    "name": "新疆伊犁慢游计划",
+    "startDate": "2026-05-22",
+    "endDate": "2026-06-03",
+    "touristType": "自驾慢游",
+    "itinerary": [
+      {"@type": "TouristDestination", "name": "伊宁"},
+      {"@type": "TouristDestination", "name": "赛里木湖"},
+      {"@type": "TouristDestination", "name": "果子沟"},
+      {"@type": "TouristDestination", "name": "琼库什台"},
+      {"@type": "TouristDestination", "name": "恰西草原"},
+      {"@type": "TouristDestination", "name": "那拉提"},
+      {"@type": "TouristDestination", "name": "夏塔"},
+      {"@type": "TouristDestination", "name": "乌鲁木齐"},
+      {"@type": "TouristDestination", "name": "库木塔格沙漠"},
+      {"@type": "TouristDestination", "name": "吐峪沟"},
+      {"@type": "TouristDestination", "name": "麻扎村"}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>新疆伊犁慢游计划</h1>
+      <p>圆周旅迹导入版：本页只保留行程日期、路线、住宿区域和地点关键词，方便手机 APP 自动识别。已移除具体航班号、具体预订民宿名称和个人备注。</p>
+      <div class="meta">
+        <div><span>日期</span><strong>2026年5月22日 - 2026年6月3日</strong></div>
+        <div><span>天数</span><strong>13天</strong></div>
+        <div><span>类型</span><strong>新疆伊犁自驾慢游 + 吐鲁番收尾</strong></div>
+        <div><span>总路线</span><strong>伊宁 -> 赛里木湖 -> 琼库什台 -> 恰西 -> 那拉提 -> 夏塔 -> 乌鲁木齐 -> 吐峪沟</strong></div>
+      </div>
+    </header>
+
+    <section aria-labelledby="days-title">
+      <h2 id="days-title">逐日行程</h2>
+
+      <article class="day">
+        <h3>第1天 | 2026年5月22日 | 上海 -> 乌鲁木齐 -> 伊宁</h3>
+        <p class="route">路线：上海出发，经乌鲁木齐中转，晚上到达伊宁。</p>
+        <p>住宿区域：伊宁。</p>
+        <p class="places">地点关键词：上海、乌鲁木齐、乌鲁木齐天山国际机场、伊宁、伊宁机场。</p>
+      </article>
+
+      <article class="day">
+        <h3>第2天 | 2026年5月23日 | 伊宁 -> 赛里木湖</h3>
+        <p class="route">路线：伊宁取车后自驾前往赛里木湖，重点看湖边日落和环湖视角。</p>
+        <p>住宿区域：赛里木湖景区内或景区周边，优先按允许区域露营或车内休息。</p>
+        <p class="places">地点关键词：伊宁、赛里木湖、赛里木湖国家级风景名胜区。</p>
+      </article>
+
+      <article class="day">
+        <h3>第3天 | 2026年5月24日 | 赛里木湖 -> 果子沟 -> 伊宁</h3>
+        <p class="route">路线：上午继续赛里木湖，顺路经过果子沟，下午回伊宁休整补给。</p>
+        <p>住宿区域：伊宁。</p>
+        <p class="places">地点关键词：赛里木湖、果子沟、果子沟大桥、伊宁。</p>
+      </article>
+
+      <article class="day">
+        <h3>第4天 | 2026年5月25日 | 伊宁 -> 琼库什台</h3>
+        <p class="route">路线：伊宁出发，开车进琼库什台村，傍晚前抵达。</p>
+        <p>住宿区域：琼库什台村。</p>
+        <p class="places">地点关键词：伊宁、特克斯、琼库什台、琼库什台村。</p>
+      </article>
+
+      <article class="day">
+        <h3>第5天 | 2026年5月26日 | 琼库什台慢游</h3>
+        <p class="route">路线：不换酒店，慢游琼库什台村、后山和村落周边，轻体验乌孙古道方向。</p>
+        <p>住宿区域：琼库什台村。</p>
+        <p class="places">地点关键词：琼库什台、琼库什台村、琼库什台后山、乌孙古道。</p>
+      </article>
+
+      <article class="day">
+        <h3>第6天 | 2026年5月27日 | 琼库什台 -> 恰西草原</h3>
+        <p class="route">路线：琼库什台出发前往恰西草原，游玩燕子桥、恰西画卷、两棵树和网红桥。</p>
+        <p>住宿区域：恰西草原附近，天气合适时露营，天气不稳则住附近民宿或酒店。</p>
+        <p class="places">地点关键词：琼库什台、恰西草原、燕子桥、恰西画卷、两棵树、网红桥。</p>
+      </article>
+
+      <article class="day">
+        <h3>第7天 | 2026年5月28日 | 恰西草原 -> 那拉提空中草原</h3>
+        <p class="route">路线：从恰西前往那拉提，下午进入那拉提空中草原，重点看草原花海、坡面和网红桥。</p>
+        <p>住宿区域：那拉提镇或那拉提景区附近。</p>
+        <p class="places">地点关键词：恰西草原、那拉提、那拉提旅游风景区、那拉提空中草原、毡房合作社、那拉提网红桥。</p>
+      </article>
+
+      <article class="day">
+        <h3>第8天 | 2026年5月29日 | 那拉提河谷草原 + 盘龙古道</h3>
+        <p class="route">路线：继续游玩那拉提，安排河谷草原和盘龙古道，根据天气调整顺序。</p>
+        <p>住宿区域：那拉提镇或那拉提景区附近。</p>
+        <p class="places">地点关键词：那拉提、那拉提河谷草原、盘龙古道、那拉提旅游风景区。</p>
+      </article>
+
+      <article class="day">
+        <h3>第9天 | 2026年5月30日 | 那拉提 -> 昭苏 / 夏塔</h3>
+        <p class="route">路线：那拉提出发转场到昭苏或夏塔附近，作为第二天早进夏塔的前夜住宿。</p>
+        <p>住宿区域：昭苏、夏特村或夏塔景区附近。</p>
+        <p class="places">地点关键词：那拉提、昭苏、夏特村、夏塔、夏塔旅游区。</p>
+      </article>
+
+      <article class="day">
+        <h3>第10天 | 2026年5月31日 | 夏塔 -> 伊宁</h3>
+        <p class="route">路线：上午游玩夏塔，主线为游客中心、转运桥、将军桥；下午回伊宁。若伊昭公路开放且天气允许，可走伊昭公路回伊宁。</p>
+        <p>住宿区域：伊宁。</p>
+        <p class="places">地点关键词：夏塔、夏塔旅游区、转运桥、将军桥、伊昭公路、昭苏、伊宁。</p>
+      </article>
+
+      <article class="day">
+        <h3>第11天 | 2026年6月1日 | 伊宁 -> 乌鲁木齐</h3>
+        <p class="route">路线：伊宁前往乌鲁木齐，下午安排乌鲁木齐市区轻量游玩和休整。</p>
+        <p>住宿区域：乌鲁木齐。</p>
+        <p class="places">地点关键词：伊宁、乌鲁木齐、乌鲁木齐市区。</p>
+      </article>
+
+      <article class="day">
+        <h3>第12天 | 2026年6月2日 | 乌鲁木齐 -> 库木塔格沙漠 -> 吐峪沟</h3>
+        <p class="route">路线：乌鲁木齐出发前往鄯善库木塔格沙漠，游玩沙漠后转到吐峪沟附近住宿。</p>
+        <p>住宿区域：吐峪沟或鄯善附近。</p>
+        <p class="places">地点关键词：乌鲁木齐、鄯善、库木塔格沙漠、库木塔格沙漠风景名胜区、吐峪沟。</p>
+      </article>
+
+      <article class="day">
+        <h3>第13天 | 2026年6月3日 | 吐峪沟 / 麻扎村 -> 乌鲁木齐 -> 广州</h3>
+        <p class="route">路线：上午游玩吐峪沟和麻扎村，中午前后回乌鲁木齐，之后返程广州。</p>
+        <p>住宿区域：当天不住宿。</p>
+        <p class="places">地点关键词：吐峪沟、麻扎村、乌鲁木齐、广州。</p>
+      </article>
+    </section>
+
+    <section aria-labelledby="copy-title">
+      <h2 id="copy-title">纯文本备份</h2>
+      <p>如果圆周旅迹不能直接识别网页链接，可以复制下面这段文字到 APP 的文字导入入口。</p>
+      <pre>新疆伊犁慢游计划
+日期：2026年5月22日 - 2026年6月3日
+类型：新疆伊犁自驾慢游 + 吐鲁番收尾
+总路线：伊宁 -> 赛里木湖 -> 果子沟 -> 琼库什台 -> 恰西草原 -> 那拉提 -> 夏塔 -> 伊宁 -> 乌鲁木齐 -> 库木塔格沙漠 -> 吐峪沟 -> 乌鲁木齐 -> 广州
+
+第1天 2026年5月22日 上海 -> 乌鲁木齐 -> 伊宁
+住宿：伊宁
+地点：上海、乌鲁木齐、乌鲁木齐天山国际机场、伊宁、伊宁机场
+
+第2天 2026年5月23日 伊宁 -> 赛里木湖
+住宿：赛里木湖景区内或景区周边
+地点：伊宁、赛里木湖、赛里木湖国家级风景名胜区
+
+第3天 2026年5月24日 赛里木湖 -> 果子沟 -> 伊宁
+住宿：伊宁
+地点：赛里木湖、果子沟、果子沟大桥、伊宁
+
+第4天 2026年5月25日 伊宁 -> 琼库什台
+住宿：琼库什台村
+地点：伊宁、特克斯、琼库什台、琼库什台村
+
+第5天 2026年5月26日 琼库什台慢游
+住宿：琼库什台村
+地点：琼库什台、琼库什台村、琼库什台后山、乌孙古道
+
+第6天 2026年5月27日 琼库什台 -> 恰西草原
+住宿：恰西草原附近
+地点：琼库什台、恰西草原、燕子桥、恰西画卷、两棵树、网红桥
+
+第7天 2026年5月28日 恰西草原 -> 那拉提空中草原
+住宿：那拉提镇或那拉提景区附近
+地点：恰西草原、那拉提、那拉提旅游风景区、那拉提空中草原、毡房合作社、那拉提网红桥
+
+第8天 2026年5月29日 那拉提河谷草原 + 盘龙古道
+住宿：那拉提镇或那拉提景区附近
+地点：那拉提、那拉提河谷草原、盘龙古道、那拉提旅游风景区
+
+第9天 2026年5月30日 那拉提 -> 昭苏 / 夏塔
+住宿：昭苏、夏特村或夏塔景区附近
+地点：那拉提、昭苏、夏特村、夏塔、夏塔旅游区
+
+第10天 2026年5月31日 夏塔 -> 伊宁
+住宿：伊宁
+地点：夏塔、夏塔旅游区、转运桥、将军桥、伊昭公路、昭苏、伊宁
+
+第11天 2026年6月1日 伊宁 -> 乌鲁木齐
+住宿：乌鲁木齐
+地点：伊宁、乌鲁木齐、乌鲁木齐市区
+
+第12天 2026年6月2日 乌鲁木齐 -> 库木塔格沙漠 -> 吐峪沟
+住宿：吐峪沟或鄯善附近
+地点：乌鲁木齐、鄯善、库木塔格沙漠、库木塔格沙漠风景名胜区、吐峪沟
+
+第13天 2026年6月3日 吐峪沟 / 麻扎村 -> 乌鲁木齐 -> 广州
+住宿：当天不住宿
+地点：吐峪沟、麻扎村、乌鲁木齐、广州</pre>
+    </section>
+  </main>
+</body>
+</html>
